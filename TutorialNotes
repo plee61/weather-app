@@ -1,0 +1,33 @@
+Asynchronous
+============
+not all call back functions are asynchronous
+setTimeout is asynchronous
+foreach, filter callback are synchronous
+
+this return value won't work in asynchronous call back:
+const geocode = (address, callback) => {
+ setTimeout(() => {
+ const data = {
+ latitude: 0,
+ longitude: 0
+ }
+ return data
+ }, 2000)
+}
+const data = geocode('Philadelphia')
+this codes will return error. the main stack has to finish before the call back can be executed, so the return value cannot return before the main stack is finished
+
+this will work:
+
+const geocode = (address, callback) => {
+ setTimeout(() => {
+ const data = {
+ latitude: 0,
+ longitude: 0
+ }
+ callback(data)
+ }, 2000)
+}
+geocode('Philadelphia', (data) => {
+ console.log(data)
+})
