@@ -31,3 +31,7 @@ const geocode = (address, callback) => {
 geocode('Philadelphia', (data) => {
  console.log(data)
 })
+
+Templating
+==========
+hbs helps to integrate handlebars into Express
