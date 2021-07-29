@@ -1,0 +1,12 @@
+go to project folder in VS Code
+git init 
+create .ignore under folder root
+add folder to ignore
+node_modules
+git add .
+git status
+git commit -m "initial commit"
+
+to unstage 
+git rm -fr node_modules
+-fr force recursive
