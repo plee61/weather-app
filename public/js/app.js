@@ -5,6 +5,7 @@ const site = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
 
+
 form.addEventListener("submit", (event)=>{
     event.preventDefault()
     message1.textContent = 'loading ....'
@@ -16,7 +17,6 @@ form.addEventListener("submit", (event)=>{
                 message1.textContent = data.error
             }
             else {
-                console.log(data)
                 message1.textContent = `Location ${data.location} .forecast: ${data.forecast.description}`
             }
         })
