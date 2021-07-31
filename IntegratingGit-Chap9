@@ -19,3 +19,12 @@ click SSH and GPG keys on the left pannel https://github.com/settings/keys
 Go to Git Bash terminal and connect ssh communication with Github
 SSH -T git@github.com
 this SSH communication only need to be setup once and be used for future communication project
+
+Error encountered when connecting SSH with Github: related to connection to port 22 failed
+Library firewall must have blocked port 22
+added config file in ~/.ssh folder (using git bash) 
+and added these lines:
+
+Host github.com
+Hostname ssh.github.com
+port 443
