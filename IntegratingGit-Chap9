@@ -15,3 +15,7 @@ Section 9 Lesson 7
 Paste generated ssh keys on Github before pushing codes from local to Github repo
 Go to settings on Github, it is under account setting
 click SSH and GPG keys on the left pannel https://github.com/settings/keys
+
+Go to Git Bash terminal and connect ssh communication with Github
+SSH -T git@github.com
+this SSH communication only need to be setup once and be used for future communication project
