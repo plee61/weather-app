@@ -9,9 +9,9 @@ const geocode = (address, callback) => {
         }
         else {
             callback(undefined, {
-                latitude: body.features[0].center[0],
-                longtitude: body.features[0].center[1],
-                place_name: body.features[0].place_name
+                //latitude: body.features[0].center[0],
+                //longtitude: body.features[0].center[1],
+                ret_address: body.features[0].place_name
             }
             )
         }

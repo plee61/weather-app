@@ -38,20 +38,19 @@ app.get('/weather',(req,res)=>{
             error: 'You must provide an address!'
         })
     }
-
-    geocode(req.query.address, (error, {latitude,longtitude,place_name}={}) => {
+    const place_name = req.query.address
+    geocode(req.query.address, (error, {latitude,longtitude,ret_address}={}) => {
         if (error){
            return console.log(error)
         } 
-        forecast(latitude, longtitude,(error, forecastData)=>{
+    
+        forecast(place_name, (error, forecastData)=>{
             if (error){
                 console.log(error)
             } else {
-                console.log(place_name)
-                console.log(forecastData)
                 res.send({
                     forecast: forecastData,
-                    location: place_name
+                    location: ret_address
                 })
             }
         })
@@ -75,5 +74,5 @@ app.get('*',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log("Express starts on port 3000")
+    console.log(`Express starts on port ${port}`)
 })
